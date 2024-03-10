@@ -1,0 +1,18 @@
+version: '3.9'
+
+services: 
+  fast-api:
+    image: fast-api
+    ports:
+      - "80:80"
+    build: .
+  
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: dev
+      MYSQL_DATABASE: investment
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
+    ports:
+      - "3306:3306"
